@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .parent {
+        /* position: relative; */
+        width: 400px;
+        height: 300px;
+        background-color: dodgerblue;
+      }
+
+      .child1 {
+        position: relative; /*속성은 상단에 쓰는 걸 권장*/
+        width: 150px;
+        height: 100px;
+        background-color: yellow;
+      }
+
+      .child2 {
+        position: absolute;
+        width: 200px;
+        height: 150px;
+        background-color: orange;
+        right: 30px;
+        top: 30px;
+      }
+
+      .child3 {
+        width: 150px;
+        height: 200px;
+        background-color: tomato;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child1">1</div>
+      <div class="child2">2</div>
+      <div class="child3">3</div>
+    </div>
+  </body>
+</html>

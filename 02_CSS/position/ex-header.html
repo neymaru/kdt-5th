@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+
+      ul {
+        display: flex; /*주축이 가로방향이면 flex direction 안바꿔도 됨*/
+        list-style: none; /*li 점이 사라짐 */
+        padding-left: 0px;
+        background-color: lightgray;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      li {
+        flex-basis: 100px;  /* (min-width 써도 됨)*/
+        flex-grow: 1; /*남은 공간을 알아서 차지*/
+        flex-shrink: 0;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+      <ul>
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+        <li>메뉴4</li>
+      </ul>
+    </div>
+  </body>
+</html>
