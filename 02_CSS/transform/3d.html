@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        height: 1000px;
+      }
+      div {
+        width: 100px;
+        height: 100px;
+        margin: auto; /*수평 가운데 정렬*/
+      }
+
+      .parent {
+        width: 200px;
+        position: relative;
+        background-color: lightgray;
+        perspective: 100px;
+      }
+
+      .child {
+        position: absolute;
+        background-color: dodgerblue;
+        opacity: 0.5;
+        transition: 1s;
+      }
+
+      .child:hover {
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child">가나다라</div>
+    </div>
+  </body>
+</html>
