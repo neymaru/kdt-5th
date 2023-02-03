@@ -1,0 +1,129 @@
+/* COMMON */
+body {
+}
+
+a {
+  text-decoration: none;
+  color: #4a4a4a;
+}
+
+/* BLOCK */
+header {
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 4px 0 rgba(207, 207, 207, 0.5);
+}
+header .inner {
+  display: flex;
+  width: 1200px;
+  height: 64px;
+  padding: 0 32px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 로고 파트 */
+header .inner .header__logo {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+header .inner .header__logo a {
+  font-family: "Indie Flower", cursive;
+  color: green;
+}
+header .inner .header__logo a i {
+}
+
+/* 메뉴 파트 */
+header .inner .header__menu {
+  display: flex;
+  font-size: 16px;
+  height: 32px;
+  flex-shrink: 0;
+  margin-left: 20px;
+}
+header .inner .header__menu li {
+  padding: 0px 16px;
+  line-height: 32px;
+}
+header .inner .header__menu li a {
+  color: #4a4a4a;
+}
+header .inner .header__menu li a:hover {
+  color: #1dc078;
+}
+
+/* 공간 파트 */
+header .inner .header__space {
+  flex-grow: 1;
+}
+
+/* 검색 파트 */
+header .inner .header__search {
+  position: relative;
+  height: 34px;
+  flex-shrink: 0;
+  margin-right: 30px;
+}
+header .inner .header__search input {
+  box-sizing: border-box;
+  width: 148px;
+  height: 34px;
+  /* 커서 포인터 여백 */
+  padding: 5px 9px;
+  font-size: 16px;
+  background-color: #f6f6f6;
+  border-radius: 3px;
+  border: none;
+  color: #4a4a4a;
+}
+
+header .inner .header__search input:hover {
+  border: 1px solid #c8c8c8;
+}
+
+header .inner .header__search input:focus {
+  border: 1px solid #c8c8c8;
+  /* outline-color: #1dc078; */
+  outline: none;
+  box-shadow: inset 0px 0px 0 2px #1dc078;
+}
+
+header .inner .header__search i {
+  /* 돋보기 상하정렬 
+  translate 는 자기 자리를 차지하기 때문에 아래 방법 쓰기 */
+
+  /* transform: translateX(-30px); */
+  /* 수직중앙정렬 외우기 */
+  position: absolute;
+  right: 9px;
+  margin: auto;
+  height: 16px;
+  top: 0;
+  bottom: 0;
+}
+
+/* 로그인, 회원가입 */
+header .inner .header__login-join {
+  display: flex;
+  height: 34px;
+  /* 요소 간 간격 띄우기 */
+  gap: 10px;
+  flex-shrink: 0;
+}
+header .inner .header__login-join .btn {
+  height: 34px;
+  border: 1px solid #dbdbdb;
+  box-sizing: border-box;
+  padding: 9px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+header .inner .header__login-join .btn.btn--login {
+  color: #4a4a4a;
+  background-color: white;
+}
+header .inner .header__login-join .btn.btn--join {
+  color: white;
+  background-color: #f77867;
+}
