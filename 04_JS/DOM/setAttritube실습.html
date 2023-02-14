@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box1 {
+        width: 200px;
+        height: 200px;
+        background-color: lightgray;
+      }
+      .box2 {
+        width: 200px;
+        height: 200px;
+        background-color: lightgray;
+        margin-top: 20px;
+      }
+      .orange {
+        background-color: orange;
+      }
+      .skyblue {
+        background-color: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1"></div>
+    <div class="box2" onclick="changeColor()"></div>
+  </body>
+  <script>
+    const boxOneEl = document.querySelector(".box1");
+    const boxTwoEl = document.querySelector(".box2");
+
+    boxOneEl.addEventListener("click", function () {
+      // function에 외부 함수를 연결해도 됨 (괄호 제외하고)
+      if (boxOneEl.classList.contains("orange")) {
+        boxOneEl.classList.remove("orange");
+        boxOneEl.classList.add("skyblue");
+      } else {
+        boxOneEl.classList.remove("skyblue");
+        boxOneEl.classList.add("orange");
+      }
+    });
+
+    function changeColor() {
+      if (boxTwoEl.classList.contains("orange")) {
+        boxTwoEl.classList.remove("orange");
+        boxTwoEl.classList.add("skyblue");
+      } else {
+        boxTwoEl.classList.remove("skyblue");
+        boxTwoEl.classList.add("orange");
+      }
+    }
+  </script>
+</html>

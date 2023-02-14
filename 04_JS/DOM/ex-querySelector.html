@@ -11,6 +11,7 @@
       }
     </style>
   </head>
+
   <body>
     <ul>
       <li class="orange">1</li>
@@ -24,6 +25,22 @@
       <li>9</li>
       <li>10</li>
     </ul>
-    <script src="./DOM/classList실습.js"></script>
   </body>
+
+  <script>
+    const orangeClassEl = document.querySelector(".orange");
+    console.log(orangeClassEl);
+
+    const skyblueIdEl = document.getElementById("skyblue");
+    console.log(skyblueIdEl);
+
+    const secondLiEl = document.querySelector("ul>li:nth-child(2)");
+    secondLiEl.classList.add("orange");
+    console.log(secondLiEl);
+
+    if (orangeClassEl.classList.contains("orange")) {
+      orangeClassEl.classList.remove("orange");
+    }
+    console.log(orangeClassEl);
+  </script>
 </html>

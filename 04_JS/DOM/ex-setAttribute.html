@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <input type="text" />
+  </body>
+  <script>
+    const boxOneEl = document.querySelector(".box1");
+    const boxTwoEl = document.querySelector(".box2");
+    const inputEl = document.querySelector("input");
+
+    boxOneEl.innerHTML = '<a href="https://naver.com">네이버로 이동</a>';
+    boxTwoEl.textContent = "박스 내용 및 스타일 변경";
+    boxTwoEl.setAttribute("style", "background-color:orange"); // 스타일 변경 방법1
+    boxTwoEl.style = "background-color:skyblue"; // 스타일 변경 방법2
+    inputEl.setAttribute("placeholder", "아이디를 입력하세요");
+  </script>
+</html>

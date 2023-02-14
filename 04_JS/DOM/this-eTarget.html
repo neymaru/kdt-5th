@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer src="main.js"></script>
+  </head>
+  <body>
+    <ul>
+      <li onclick="deleteThis(this)">1</li>
+      <li onclick="deleteThis(this)">2</li>
+      <li onclick="deleteThis(this)">3</li>
+      <li onclick="deleteThis(this)">4</li>
+      <!-- this 는 자기 자신의 노드를 가리킨다. -->
+    </ul>
+
+    <ul>
+      <li class="list">1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+  </body>
+  <script>
+    function deleteThis(t) {
+      // 매개변수로 this 쓰면 안됨 (예약어이기 때문에)
+      t.remove();
+    }
+
+    const listEl = document.querySelector(".list");
+    listEl.addEventListener("click", function (e) {
+      // 함수의 매개변수로 무엇을 선언해주면 해당 브라우저의 이벤트 함수를 불러옴
+      e.target.remove();
+      // 클릭했을때 특정 타겟을 확인하고 싶을 때
+    });
+  </script>
+</html>

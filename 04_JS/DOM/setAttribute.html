@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box">box</div>
+    <div class="div1">1</div>
+    <div class="div2">2</div>
+    <input type="text" />
+  </body>
+  <script>
+    const boxEl = document.querySelector(".box");
+    const inputEl = document.querySelector("input");
+    boxEl.setAttribute("style", "background-color:orange");
+    // 속성을 통으로 바꿔주기 때문에 기존 스타일은 날아가기 때문에 속성을 여러 개 입력하려면 세미콜론으로 이어붙이면 됨
+    inputEl.setAttribute("placeholder", "통합검색");
+
+    console.log(boxEl.textContent);
+    boxEl.textContent = "KDT";
+    const divOneEl = document.querySelector(".div1");
+    const divTwoEl = document.querySelector(".div2");
+
+    divOneEl.innerHTML = "<button>test</button>"; // html 요소를 읽어서 html 로 표현
+    divTwoEl.innerText = "<button>test</button>"; // 문자열로 출력
+  </script>
+</html>
