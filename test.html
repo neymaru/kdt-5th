@@ -11,4 +11,16 @@
     dasjkldsajkl
     <input />
   </body>
+
+  <script>
+    const student1 = new Students("홍길동", "JavaScript");
+
+    function Students(name, major) {
+      this.name = name;
+      this.major = major;
+      this.study = function () {
+        console.log(`${this.name}이 ${this.major}를 시작합니다.`);
+      };
+    }
+  </script>
 </html>
