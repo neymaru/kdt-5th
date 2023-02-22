@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.localStorage.clear();
+
+      window.localStorage.setItem("son", "손흥민");
+      window.localStorage.setItem("hwang", "황희찬");
+      window.localStorage.setItem("lee", "이강인");
+      window.localStorage.setItem("kim", "김민재");
+      window.localStorage.setItem("cha", "차범근");
+
+      for (let i = 0; i < localStorage.length; i++) {
+        let key = window.localStorage.key(i);
+        console.log(`키: ${key}, 값: ${window.localStorage.getItem(key)}`);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,125 @@
+@import "reset";
+@import "mixin";
+
+// reset이 불러와짐
+// $body-bg: #eee;
+$body-bg: #111;
+$wrap-border: #ddd;
+// $wrap__item-bg: #fff;
+$wrap__item-bg: #222;
+$wrap__item_h2: #333;
+$wrap__item_p: #777;
+$btn-bg: orange;
+$btn-font: white;
+$wrap__item-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+
+body {
+  background-color: $body-bg;
+  .wrap {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 100px;
+    border: 2px solid $wrap-border;
+    perspective: 600px;
+    &:hover {
+      .item {
+        transform: translateY(0px) rotateY(0deg);
+        opacity: 1;
+      }
+    }
+    .item {
+      width: 300px;
+      padding: 30px;
+      background-color: $wrap__item-bg;
+      margin: 50px;
+      border-radius: 10px;
+      box-shadow: 5px 5px 20px $wrap__item-shadow;
+      transform: translateY(100px) rotateY(180deg);
+      transition: 0.6s;
+      opacity: 0;
+      // &:nth-child(1) {
+      //   transition-delay: 0.1s;
+      // }
+      // &:nth-child(2) {
+      //   transition-delay: 0.2s;
+      // }
+      // &:nth-child(3) {
+      //   transition-delay: 0.3s;
+      // }
+      // &:nth-child(4) {
+      //   transition-delay: 0.4s;
+      // }
+      // 위의 중복으로 쓰는것과 밑에것은 동일
+      // $interval: 0.3s;
+      // @for $i from 1 to 5 {
+      //   &:nth-child(#{$i}) {
+      //     transition-delay: $interval * $i;
+      //   }
+      // }
+      &:hover {
+        background-color: $btn-bg;
+        a {
+          background-color: $wrap__item-bg;
+          color: $btn-bg;
+        }
+      }
+
+      &--small {
+        background-color: $wrap__item-shadow;
+      }
+
+      h2 {
+        font: bold 30px/1 "arial";
+        /* 30px/1 배수로서 line-heigth 줄수있음  */
+        margin-bottom: 20px;
+        @if $wrap__item-bg == #fff {
+          // === 이건 여기서 안먹음 == 만 먹음
+          color: $wrap__item_h2;
+        } @else {
+          color: white;
+        }
+      }
+      p {
+        font: normal 16px/1.5 "arial";
+        /* 3 line-heigth 1.5배 즉 24정도  */
+        @if $wrap__item-bg == #fff {
+          color: $wrap__item_p;
+        } @else {
+          color: white;
+        }
+      }
+
+      $bgColors: (orange, hotpink, aqua, lightgreen);
+      $interval: 0.3s;
+      @each $el in $bgColors {
+        // el : map 의 매개변수와 같음
+        // index를 바로 안줌 그래서 따로 선언해줘야함
+        $index: index(
+          $list: $bgColors,
+          $value: $el,
+        );
+        &:nth-child(#{$index}) {
+          transition-delay: $interval * $index;
+          a {
+            @include button($bg-color: $el);
+
+            &:hover {
+              background-color: $wrap__item-bg;
+              color: $btn-bg;
+            }
+          }
+        }
+      }
+
+      a {
+        // @include button(100%, $btn-bg, $btn-font);
+        // --> 매개변수를 받아서 크기를 바꾼다던가 등의 동작도 수행
+        // @include button();
+        // —>  초기값을 설정해주면 값을 전달해주지 않아도 에러가 안생김
+        @include button($width: 100%, $bg-color: $btn-bg, $font-color: $btn-font);
+        // 이건 전달값임 내가 알아보기 좋으라고 (초기값 아님)
+      }
+    }
+  }
+}

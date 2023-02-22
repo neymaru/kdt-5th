@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // window.localStorage.setItem("name", "손흥민");
+      // console.log(windowd.localStorage.getItem("name"));
+
+      // window.localStorage.setItem("number", 1);
+      // const number = window.localStorage.getItem("number");
+      // console.log(number);
+      // console.log(typeof number);
+
+      const tetz = {
+        name: "김성현",
+        isOld: true,
+        hobby: ["유튜브", "운전", "음식"],
+      };
+
+      // const jsonTetz = JSON.stringify(tetz);
+      // console.log(tetz);
+      // console.log(jsonTetz);
+
+      // const objectTetz = JSON.parse(jsonTetz);
+      // console.log(objectTetz);
+
+      const jsonTetz = JSON.stringify(tetz);
+      window.localStorage.setItem("tetz", jsonTetz);
+
+      const jsonTetzFromLocal = window.localStorage.getItem("tetz");
+      const objTetz = JSON.parse(jsonTetzFromLocal);
+      console.log(objTetz);
+
+      console.log(window.localStorage);
+
+      window.localStorage.setItem("pororo", "뽀로로입니다!");
+      console.log(window.localStorage.getItem("pororo"));
+      window.localStorage.removeItem("pororo");
+      console.log(window.localStorage.getItem("pororo"));
+
+      window.localStorage.clear();
+      console.log(window.localStorage);
+
+      window.localStorage.setItem("tetz", "접니다");
+      window.localStorage.setItem("pororo", "뽀로로");
+      console.log(window.localStorage.length);
+      console.log(window.localStorage.key(0));
+      console.log(window.localStorage.key(1));
+      console.log(window.localStorage.key(2));
+
+      window.localStorage.clear(); // 로컬 스토리지 모두 클리어
+
+      window.localStorage.setItem("tetz", "이효석");
+      window.sessionStorage.setItem("pororo", "뽀로로");
+    </script>
+  </head>
+  <body></body>
+</html>
