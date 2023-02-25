@@ -16,6 +16,7 @@ $wrap__item-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
 
 body {
   background-color: $body-bg;
+  text-decoration: none;
   .wrap {
     display: flex;
     justify-content: center;

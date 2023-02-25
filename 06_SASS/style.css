@@ -16,6 +16,7 @@ a {
 
 body {
   background-color: #111;
+  text-decoration: none;
 }
 body .wrap {
   display: flex;
